@@ -6,6 +6,7 @@ This is a simple tool that allows to estimate the policy of an agent acting in a
 The algorithm recovers the policy by maximizing (via adam) the maximum likelihood with an entropy regularization term. Note that the otpimization here is done in the full policy space, namely the number of parameters is $|\mathcal{S} \times \mathcal{A}|$, where $\mathcal{S}$ is the state space and $\mathcal{A}$ is the action space. In a future I would like to add a function approximation option to allow recovering the policy in large MDPs. 
 
 The function `generate_data()` creates a random policy and sample some trajectory from it. You can specify the size of the MDP (namely the number of states `n_states` and the number of actions `n_actions`) and the amount of trajectories and their length (`n_trajectories` and `trajectory_length`). 
+The function `maximum_likelihood()` outputs an entropy regularized maximum likelihood estimation of the policy computed from the trajectories.
 
 Both the actual policy and the estimated policy will be printed as well as their [KL-divergence](https://en.wikipedia.org/wiki/Kullback%E2%80%93Leibler_divergence) (more precisely, the Euclidean norm of the vector of the state-wise KL-divergences).
 
